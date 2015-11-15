@@ -1,0 +1,9 @@
+{
+  "startingUser": "User",
+  "targetUser": "User",
+  "item": "Item",
+  "amountCollected": "Number",
+  "contributors": { "user": "User", "amount": "Number" },
+  "startDate": "Date",
+  "endDate": "Date"
+}

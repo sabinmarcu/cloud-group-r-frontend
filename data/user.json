@@ -1,0 +1,7 @@
+{
+  "facebookId": "String",
+  "name": "String",
+  "wishList": "Array[Item]",
+  "friendsList": "Array[User]",
+  "loginToken": "String"
+}
