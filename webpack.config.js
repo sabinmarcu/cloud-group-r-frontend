@@ -6,7 +6,7 @@ var TransferWebpackPlugin = require('transfer-webpack-plugin');
 var devFlagPlugin = new webpack.DefinePlugin({
     __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false')),
     __CHROMEAPP__: JSON.stringify(JSON.parse((process.env.ENV || "browser").toLowerCase() === "chrome" || 'false')),
-    __NAME__: `"${(process.env.SITENAME || "Questly")}"`,
+    __NAME__: `"${(process.env.SITENAME || "AppNameHere")}"`,
     __BASEURL__: `"${(process.env.BASEURL || "/")}"`,
 });
 
@@ -17,8 +17,8 @@ var config = {
             'webpack/hot/dev-server',
             'webpack/hot/only-dev-server',
             path.join(__dirname, '/src/app/app.jsx'),
-        ], bootstrap: [
-            path.join(__dirname, '/src/bootstrap.js'),
+        ], loginwrapper: [
+            path.join(__dirname, '/src/loginwrapper/index.js'),
         ]
     },
     //Config options on how to interpret requires imports
@@ -96,6 +96,10 @@ var config = {
             {
                 test: /\.lson$/,
                 loader: 'lson-loader',
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader',
             },
         ],
         "noParse": /lie\.js$|\/leveldown\//

@@ -1,33 +1,4 @@
 {
-    "quests": [
-        {title: "Take out the trash", description: "Easy as that", objectives: [
-            {title: "Trash Bag", description: "Get the trash in a bag", done: true},
-            {title: "Garbage Bin", description: "Take the trash bag to the garbage bin", done: false},
-        ]},
-        {
-            title: "Bullcrap", 
-            description: "Man advert katana drone narrative saturation point realism nano. Carbon camera sprawl spook disposable tank-traps denim wonton soup plastic assassin. Boat rebar post-semiotics urban market construct realism grenade. Render-farm Tokyo shoes cardboard wonton soup urban rifle Legba systemic. Carbon man bicycle media franchise table marketing post-systema.", 
-            objectives: [
-                { 
-                    title: "Objective 1", 
-                    description: "Bridge refrigerator convenience store sign pre-corporation film camera savant decay. Monofilament rain bridge camera knife nodality Kowloon assassin nodal point smart. Construct saturation point vehicle corporation neural 3D-printed drugs DIY kanji digital augmented reality. Stimulate office human smart-receding pistol math-savant woman city systema into grenade drugs silent boy digital. Computer systemic rebar kanji franchise artisanal human uplink table refrigerator bicycle hotdog decay neon camera geodesic. Smart-range-rover sensory bridge crypto-gang towards footage woman. Cyber-Shibuya euro-pop fetishism chrome dead gang paranoid cartel dome post. ", 
-                    done: false
-                },
-                {
-                    title: "Objective 2", 
-                    description: "Tiger-team semiotics beef noodles cardboard 8-bit savant RAF pen free-market numinous DIY silent media military-grade artisanal vinyl. Dolphin DIY smart-katana into render-farm Legba futurity media vinyl. Range-rover 8-bit sub-orbital city receding pen smart. ", 
-                    done: true
-                },
-                {
-                    title: "Objective 3", 
-                    description: "Savant augmented reality shoes sentient man semiotics dolphin corrupted. Human corporation office free-market geodesic nano-hotdog physical digital corrupted dissident. Soul-delay Tokyo weathered meta-skyscraper realism fluidity. Nodal point numinous assassin drugs lights corporation dead gang tank-traps tiger-team hotdog film courier A.I. sub-orbital tanto. ", 
-                    done: false
-                },
-            ]
-        },
-    ],
-    "windows": [
-        { name: "testform" },
-        { name: "questview", id:"0" },
-    ]
+    "id": "",
+    "activeView": "login",
 }

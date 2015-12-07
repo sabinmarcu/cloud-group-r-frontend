@@ -85,7 +85,7 @@ class Util {
     }
 
     static get reducers() {
-        return Util.loadReducers(require.context('../reducers/', true, /\.\/?(.*)\/((?:_init|[^\/]+\.reducer)\.(?:js|jsx|ls))$/gm));
+        return Util.loadReducers(require.context('../reducers/', true, /\.\/?(.*)\/((?:_(init|final)|[^\/]+\.reducer)\.(?:js|jsx|ls))$/gm));
     }
 
     static loadReducers(ctx) {
@@ -93,7 +93,7 @@ class Util {
             const _type = `${set.prefix}:${set.reducer}`, _directType = set.reducer, _reducer = ctx(set.full), _prefix = set.prefix.toLowerCase();
             prev[_prefix] = prev[_prefix] || [];
             prev[_prefix].push((state, action) => {
-                if (_directType === "_INIT" || _type === action.type) {
+                if (_directType === "_INIT" || _directType === "_FINAL" || _type === action.type) {
                     return _reducer(state, action);
                 }
                 return state;
@@ -116,7 +116,7 @@ class Util {
     }
 
     static arrayToReducerMap(arr) {
-        const r = /\.\/?(.*)\/((?:_init|[^\/]+\.reducer)\.(?:js|jsx|ls))$/gm;
+        const r = /\.\/?(.*)\/((?:_(init|final)|[^\/]+\.reducer)\.(?:js|jsx|ls))$/gm;
         return arr
             .replace(r, (matched, $1, $2, offset, string) => `${$2}|${$1.replace(/\//, ".")}|${matched}$`)
             .replace(/(\n|\t)/g, "")
