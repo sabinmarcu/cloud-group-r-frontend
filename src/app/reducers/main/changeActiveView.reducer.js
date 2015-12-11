@@ -1,0 +1,1 @@
+export default (state, action) => true && { ...state, activeView: action.view };

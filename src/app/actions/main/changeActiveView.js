@@ -1,0 +1,1 @@
+export default (view, loginData) => loginData !== "" && { view: view } || null;

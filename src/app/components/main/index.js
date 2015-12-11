@@ -6,6 +6,9 @@ import { connect } from "react-redux";
 
 import { actions } from "../../helpers/util";
 
+// import ThemeManager from 'material-ui/lib/styles/theme-manager';
+// import LightRawTheme from 'material-ui/lib/styles/raw-themes/light-raw-theme';
+
 @connect(state => {
     return {
         subtitle: state.main.subtitle,
@@ -13,9 +16,13 @@ import { actions } from "../../helpers/util";
 })
 export default class Main extends EnhancedComponent {
 
-    state = {
-        title: "Coi",
-    }
+    // childContextTypes = {
+    //     muiTheme: React.PropTypes.object,
+    // }
+
+    // childContext = {
+    //     muiTheme: ThemeManager.getMuiTheme(LightRawTheme),
+    // }
 
     constructor(...args) {
         super(require, ...args);

@@ -1,0 +1,18 @@
+@import "../_variables"
+
+.card
+    display block
+    flex 1 1 maxcardwidth
+    min-width maxcardwidth
+    min-height maxcardheight
+    
+    background white
+    padding 10px
+    box-shadow 0 2px 5px rgba(black, 0.2)
+    border-radius 4px
+
+    position relative
+    
+    &:global(.small)
+        max-width maxcardwidth
+        max-height maxcardheight

@@ -1,5 +1,6 @@
 import React from "react";
 import PageManager from "../pagemanager"
+import Header from "../header";
 
 export default class MainViews {
     static get titleText() {
@@ -10,12 +11,12 @@ export default class MainViews {
     }
     static render() { 
         return <div className={this.styles.appwrapper}>
-            <header className={this.styles.header}>
-                <h4>Logo Placeholder</h4>
-            </header>
             <section className={this.styles.content}>
                 <PageManager />
             </section> 
+            <header className={this.styles.header}>
+                <Header />
+            </header>
         </div>
     }
 }

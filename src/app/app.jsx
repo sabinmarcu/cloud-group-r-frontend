@@ -8,7 +8,7 @@
 
     let React = require('react');
     let ReactDOM = require("react-dom");
-    // let injectTapEventPlugin = require('react-tap-event-plugin');
+    let injectTapEventPlugin = require('react-tap-event-plugin');
     let Main = require('./components/main');
 
     let {renderDevTools, createStore} = require("./helpers/devTools");
@@ -23,7 +23,7 @@
     }
 
     // Material-UI requirement
-    // injectTapEventPlugin();
+    injectTapEventPlugin();
 
     console.timeStamp("Required intial stuff");
     let { Api, webpackGenerator } = require("react-api-consumer");
