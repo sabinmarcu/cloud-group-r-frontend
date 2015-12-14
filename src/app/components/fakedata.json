@@ -169,7 +169,7 @@
         {
             "FacebookId": "2149871298379871234",
             "name": "Some Dude",
-            "wishList": ["iPhone", "Android Phone"],
+            "wishList": [1, 4],
             "friendsList": [2, 3, 4],
             "loginToken": "3214i791735098234",
             "id": 1
@@ -177,7 +177,7 @@
         {
             "FacebookId": "129878234897123408",
             "name": "Some Other Dude",
-            "wishList": ["iPhone", "Windows Phone"],
+            "wishList": [2, 5],
             "friendsList": [1, 3, 4],
             "loginToken": "45789872345098",
             "id": 2
@@ -185,7 +185,7 @@
         {
             "FacebookId": "2405890234509823450981",
             "name": "Some New Dude",
-            "wishList": ["iPad", "Android Tablet"],
+            "wishList": [3, 2],
             "friendsList": [1, 2, 4],
             "loginToken": "234589724537982345",
             "id": 3

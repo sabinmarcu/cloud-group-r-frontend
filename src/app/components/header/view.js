@@ -1,11 +1,13 @@
 import React from "react";
 import SearchBar from "./searchBar";
+import UserMenu from "./userMenu";
+
 export default class HeaderViews {
     static get searchBar() {
         return <SearchBar />;
     }
     static get userControlls() {
-        return <h1> User Stuff </h1>
+        return <UserMenu />;
     }
     static render() {
         return <span className={this.styles.wrapper}>

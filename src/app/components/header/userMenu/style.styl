@@ -1,0 +1,44 @@
+@import "../../_variables"
+
+.navMenu
+    display block
+    height 100%
+    > li
+        display flex
+        height headerh
+        width headerh
+        font-size (headerh / 2)
+        align-items center
+        justify-content center
+        float right
+        position relative
+        background white
+        transition all 0.5s mdtiming
+        cursor pointer
+        &:hover
+            background #eee
+            ul
+                transform none
+        ul
+            font-size initial
+            position absolute
+            top 100%
+            right 0
+            margin 0
+            padding 0
+            list-style none
+            min-width 200px
+            transform translateX(200%)
+            transition all 0.5s mdtiming
+            li
+                display block
+                background #eee
+                padding 10px
+                border-bottom solid 1px #ddd
+                box-shadow 0 2px 5px rgba(black, 0.1)
+                cursor pointer
+                transition all 0.5s mdtiming
+                &:hover
+                    background #ddd
+                
+            
