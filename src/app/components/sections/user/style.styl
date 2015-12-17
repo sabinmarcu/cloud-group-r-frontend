@@ -1,0 +1,34 @@
+@import "../../_nib";
+@import "../../_variables";
+
+.container
+    height headerh
+    display flex
+    flex-flow row nowrap
+    min-height headerh
+
+.avatar
+    width headerh
+    height headerh
+    max-width headerh
+    display flex
+    align-items center
+    justify-content center
+    font-size (headerh / 2)
+    
+.name, .avatar
+    flex 1 1 100%
+    height headerh
+    
+.name
+    display flex
+    align-items center
+    justify-content flex-start
+    align-content space-around
+    padding 10px 0
+    flex-flow row wrap
+    h1
+        margin 0
+        font-size 14pt
+    a
+        margin 0 10px 0 0
