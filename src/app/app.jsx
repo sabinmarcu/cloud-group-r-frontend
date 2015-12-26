@@ -26,9 +26,9 @@
     injectTapEventPlugin();
 
     console.timeStamp("Required intial stuff");
-    let { Api, webpackGenerator } = require("react-api-consumer");
-    console.log(Api, webpackGenerator);
-    console.log(webpackGenerator.generate(require, "./api"));
+//    let { Api, webpackGenerator } = require("react-api-consumer");
+//    console.log(Api, webpackGenerator);
+//    console.log(webpackGenerator.generate(require, "./api"));
     // debugger
 
     // Load Reducers
@@ -94,9 +94,7 @@
     ReactDOM.render(
         (<div>
             <Provider store={store}>
-                <Api store={webpackGenerator.generate(require, "./api")} address={"http://localhost:3000/"}>
                     <Main />
-                </Api>
             </Provider>
             {renderDevTools(store)}
         </div>)
