@@ -4,6 +4,9 @@
       // Logged into your app and Facebook.
       accessToken = response.authResponse.accessToken;
       userId = response.authResponse.userID;
+      /* 
+        accessToken is to be sent to the backend
+      */
       console.log("accessToken = ", accessToken);
       console.log("userId = ", userId);
     } else if (response.status === 'not_authorized') {
