@@ -1,0 +1,19 @@
+import React from "react";
+import CampaignList from "../campaignList";
+import WishList from "./wishlist";
+
+export default class UserProfileViews {
+    static get content() {
+        return (this.state.user.id === this.props.id || this.props.user.subview === "wishlist") && <WishList list={this.state.wishlist} /> || <CampaignList for={this.state.user.id} />
+    }
+    static render() {
+        return this.state.user && <div className={this.styles.container}>
+            <h1 className={[this.styles.name, this.styles.cap].join(" ")}>{this.state.user.user.first_name} {this.state.user.user.last_name}</h1>
+            {this.state.user.id !== this.props.id && <nav className={[this.styles.nav, this.styles.cap].join(" ")}>
+                <li className={this.styles.listItem} onClick={() => this.selectSubview("campaigns")} >Campaigns List</li>
+                <li className={this.styles.listItem} onClick={() => this.selectSubview("wishlist")} >Wish List</li>
+            </nav>}
+            {this.views.content}
+        </div>
+    }
+}

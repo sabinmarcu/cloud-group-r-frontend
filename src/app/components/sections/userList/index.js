@@ -1,23 +1,19 @@
 import BaseComponent from "../../baseComponent";
 import fakedata from "../../fakedata.json";
 import { autobind } from "core-decorators";
+import { connect } from "react-redux";
+import $ from "jquery";
 
+@connect(state => true && { filter: state.main.filter } )
 export default class UserList extends BaseComponent {
     constructor(...args) {
         super(require, ...args);
     }
-
-    get users() {
-        return this.props.data || fakedata.users || [];
+    componentDidMount() {
+        let req = $.get(`${this.__website__url}users/friends`);
+        req.done(data => this.setState({users: data}))
     }
-
-    get items() {
-        return this.props.items || fakedata.items || [];
-    }
-
-    @autobind
-    getItem(id) {
-        const filt = this.items.filter(it => it.id === id)
-        return filt && filt[0];
+    state = {
+        users: [],
     }
 }

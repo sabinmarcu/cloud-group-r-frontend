@@ -22,6 +22,7 @@ export default class EnhancedComponent extends React.Component {
         _extend(this, "style", ctx, false);
     }
 
+    __website__url = "http://wishbook-server.appspot.com/";
     render() {
         return (this.views && this.views.render && this.views.render()) || <span>Not implemented</span>;
     }

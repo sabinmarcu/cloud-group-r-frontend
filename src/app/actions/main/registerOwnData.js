@@ -1,0 +1,1 @@
+export default data => true && { filter: "", id: data.id, user: { picture: data.profilePictureUrl, ...data.user} }

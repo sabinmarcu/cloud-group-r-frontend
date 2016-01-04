@@ -1,1 +1,1 @@
-export default (state, action) => true && { ...state, activeView: action.view };
+export default (state, action) => true && { ...state, activeView: action.view, activeSubView: action.subview, filter: action.filter || "" };

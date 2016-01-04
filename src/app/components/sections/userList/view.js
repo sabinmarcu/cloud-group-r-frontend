@@ -1,19 +1,12 @@
 import React from "react";
 import User from "../user";
 
-export default class CampaignListViews {
-    static user(id) {
-        let user = this.getUser(id);
-        return user && user.name || "User Not Found";
-    }
-    static item(id) {
-        let item = this.getItem(id);
-        return item && item.name || "Item Not Found";
-    }
+export default class FriendsListViews {
     static render() {
         return <section className={this.styles.list}>
-            {this.users && this.users.length > 0 && this.users.map(it => 
-                <User user={it} getters={{item: this.getItem}} />
+            {this.state.users && this.state.users.length > 0 && this.state.users.filter(it => this.props.filter === "" || it.user.first_name.indexOf(this.props.filter) >= 0 || it.user.last_name.indexOf(this.props.filter) >= 0
+            ).map(it => 
+                <User user={it} />
             ) || <h1> No Users </h1>}
         </section>
     }

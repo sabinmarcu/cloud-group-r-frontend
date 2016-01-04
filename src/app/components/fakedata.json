@@ -1,4 +1,5 @@
 { 
+    "user": {"id":23,"itemList":[],"friendList":[6,7,13,20],"myCampaignList":[],"campaignListForMe":[],"user":{"id":24,"first_name":"Sabin","last_name":"Marcu"},"uniqueToken":"969951046405054","profilePictureUrl":"https://scontent.xx.fbcdn.net/hprofile-xpt1/v/t1.0-1/p50x50/12039365_920219064711586_4233715918402325740_n.jpg?oh=4decb6dde5fe65c53f855e20457dd643&oe=571803AB"},
     "campaigns": [
         {
             "title": "Some Campaign",

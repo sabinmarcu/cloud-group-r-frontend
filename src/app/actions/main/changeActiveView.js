@@ -1,1 +1,1 @@
-export default (view, loginData) => loginData !== "" && { view: view } || null;
+export default (view, subview) => true && { filter: "", view: view, subview: subview };

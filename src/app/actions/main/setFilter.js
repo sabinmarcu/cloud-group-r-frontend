@@ -1,0 +1,1 @@
+export default filter => true && { filter: filter }

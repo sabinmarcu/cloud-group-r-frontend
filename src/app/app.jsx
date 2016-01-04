@@ -17,6 +17,13 @@
     let { Provider } = require('react-redux');
     let { arrayToReducerMap, loadReducers } = require("./helpers/util");
 
+    let $ = require("jquery");
+    $.ajaxSetup({
+        xhrFields: {
+            withCredentials: true,
+        },
+    });
+
     // For dev
     if (__DEV__) {
         window.React = React;
@@ -24,6 +31,15 @@
 
     // Material-UI requirement
     injectTapEventPlugin();
+
+      // Load the SDK asynchronously
+    (function(d, s, id) {
+        let js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/all.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 
     console.timeStamp("Required intial stuff");
 //    let { Api, webpackGenerator } = require("react-api-consumer");
@@ -90,16 +106,23 @@
 
     let wrapper = document.createElement("div");
 
-    // Mount the app and dev tools
-    ReactDOM.render(
-        (<div>
-            <Provider store={store}>
-                    <Main />
-            </Provider>
-            {renderDevTools(store)}
-        </div>)
-    , wrapper);
-
+    window.fbAsyncInit = () => {
+        FB.init({
+        appId      : '1722365597983229',
+            cookie     : true,  // enable cookies to allow the server to access the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v2.2',// use version 2.2
+        });
+        // Mount the app and dev tools
+        ReactDOM.render(
+            (<div>
+                <Provider store={store}>
+                        <Main />
+                </Provider>
+                {renderDevTools(store)}
+            </div>)
+        , wrapper);
+    }
     wrapper.setAttribute("id", "ApplicationWrapper");
     document.body.appendChild(wrapper);
 

@@ -1,22 +1,14 @@
 import BaseComponent from "../../baseComponent";
 import { autobind } from "core-decorators";
+import { connect } from "react-redux";
+import { actions } from "../../../helpers/util";
 
-const _opts = [
-    {label: "Users", value: "users"},
-    {label: "Visible Campaigns", value: "campaigns"},
-];
-
+@connect(state => true && {filter: state.main.filter})
 export default class SearchBarComponent extends BaseComponent {
-
-    state = {
-        filter: _opts[0],
-    }
-
-    opts = _opts;
 
     @autobind
     handleFilterChange(filter) {
-        this.setState({filter})
+        this.props.dispatch(actions.main.setFilter(filter.target.value));
     }
 
 

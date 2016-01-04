@@ -1,1 +1,1 @@
-export default (state, action) => true && { ...state, id: action.id }
+export default (state, action) => true && { ...state, ...action }
