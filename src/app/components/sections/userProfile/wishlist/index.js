@@ -28,7 +28,13 @@ export default class WishListComponent extends BaseComponent {
             crossDomain: true,
             data: obj,
         });
-        req.done((...args) => this.props.refreshHook && this.props.refreshHook())
+        req.done((res) => {
+            if (res === "Campaign for this item already exists.") {
+                alert("This item already has a campaign");
+            } else {
+                this.props.refreshHook && this.props.refreshHook()   
+            }
+        })
         req.fail((...arsg) => console.log("FAIL", ...args))
     }
  }
