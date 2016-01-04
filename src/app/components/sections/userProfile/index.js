@@ -16,7 +16,7 @@ export default class UserProfile extends BaseComponent {
         this.refresh(props);
     }
     refresh(props) {
-        let req = $.get(`${this.__website__url}users/${props.user.id}`);
+        let req = $.get(`${this.__website__url}users/${this.props.user.id}`);
         this.setState({wishlist: {}, user: null})
         req.done(user => {
             this.setState({user})
