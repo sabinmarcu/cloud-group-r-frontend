@@ -15,6 +15,8 @@ export default class UserProfile extends BaseComponent {
     componentWillReceiveProps(props) {
         this.refresh(props);
     }
+
+    @autobind
     refresh(props) {
         let req = $.get(`${this.__website__url}users/${this.props.user.id}`);
         this.setState({wishlist: {}, user: null})
