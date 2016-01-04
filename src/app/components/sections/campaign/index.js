@@ -37,7 +37,6 @@ export default class CampaignComponent extends BaseComponent {
             method: "PUT",
             data: this.refs.amount.value,
         })
-        e.preventDefault()
     }
 
     state = {
