@@ -18,7 +18,9 @@ export default class CampaignComponent extends BaseComponent {
     getUser(id) {
         if (!this.state.users[id]) {
             $.get(`${this.__website__url}users/${id}`, data => {
-                this.setState({users: {...this.state.users, [id]: data}})
+                if (!this.__unmounted) {
+                    this.setState({users: {...this.state.users, [id]: data}})
+                }
             })     
         }
     }

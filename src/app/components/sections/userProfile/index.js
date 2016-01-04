@@ -32,6 +32,10 @@ export default class UserProfile extends BaseComponent {
         this.props.dispatch(actions.main.changeActiveView("userprofile", { id: this.props.user.id, subview: sv }))
     }
 
+    get isMe() {
+        return this.state.user.id === this.props.id;
+    }
+
     state = {
         wishlist: {},
         user: null,

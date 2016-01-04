@@ -5,6 +5,26 @@ export default class WishListViews {
     static render() {
         return <span>
             <section className={this.styles.list}>
+                { this.props.isMe && <Card className={this.styles.container}>
+                    <header className={this.styles.header}>Add an item to your wishlist</header>
+                    <label for="name" className={this.styles.inputGroup}>
+                        Name
+                        <input type="text" id="name" ref="name"/>
+                    </label>
+                    <label for="eventname" className={this.styles.inputGroup}>
+                        Event Name
+                        <input type="text" id="eventname" ref="eventName"/>
+                    </label>
+                    <label for="description" className={this.styles.inputGroup}>
+                        Description
+                        <textarea id="description" ref="description" ></textarea>
+                    </label>
+                    <label for="price" className={this.styles.inputGroup}>
+                        Price
+                        <input type="number" id="price" ref="price"/>
+                    </label>
+                    <button className={this.styles.submitButton} onClick={this.newItem}>Submit</button>
+                </Card>}
                 {Object.keys(this.props.list).map(item => 
                     <Card className={this.styles.container}>
                         <header className={this.styles.header}>{this.props.list[item].name} (Price: {this.props.list[item].price})</header>

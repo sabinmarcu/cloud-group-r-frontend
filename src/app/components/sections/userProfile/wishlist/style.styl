@@ -4,12 +4,15 @@
     h4
         margin 15px 0
         padding 0    
+    clear both
         
 .list
-    display block
+    display flex
+    align-items flex-start
     margin 25px 0 
     > *
-        margin 0 10px
+        margin 10px
+        overflow hidden
 
 .header
     margin -10px -10px 10px
@@ -24,3 +27,33 @@
     margin 0 0 15px 20px
     text-indent 20px
     color #aaa
+    
+.inputGroup
+    display block
+    width 100%
+    margin 10px 0
+    span
+        display block
+        color #444
+        text-indent 10px
+    input, textarea
+        width 100%
+        max-width 100%
+        min-width 100%
+        padding 5px
+        border solid 1px #ddd
+        text-indent 15px
+        outline none
+        box-shadow 0 2px 4px rgba(black, 0.2)
+.submitButton
+    float right
+    background cgreen
+    transition all 0.5s mdtiming
+    &:hover
+        background cdarkgreen
+    border none
+    color white
+    padding 10xpx 15px
+    border-radius 2px
+    box-shadow 0 2px 4px rgba(black, 0.2)
+    

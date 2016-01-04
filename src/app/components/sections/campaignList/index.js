@@ -7,7 +7,7 @@ import $ from "jquery";
 @connect(state => true && { filter: state.main.filter })
 export default class CampaignList extends BaseComponent {
     componentDidMount() {
-        $.get(`${this.__website__url}campaigns/${this.props.for && `for/?id=${this.props.for}`}`, (campaigns) => {
+        $.get(`${this.__website__url}campaigns/${this.props.for && `for/?id=${this.props.for}` || ""}${this.props.from && `from/?id=${this.props.from}` || ""}`, (campaigns) => {
             this.setState({campaigns: campaigns});
             campaigns.map(it => 
                 $.get(`${this.__website__url}items/?id=${it.item}`, data => {
