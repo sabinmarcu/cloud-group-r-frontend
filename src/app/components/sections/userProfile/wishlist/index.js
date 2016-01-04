@@ -14,7 +14,10 @@ export default class WishListComponent extends BaseComponent {
             crossDomain: true,
             data: ["name", "eventName", "description", "price"].reduce((prev, it) => (prev[it] = this.refs[it].value) && prev || prev, {}),
         });
-        req.done((...args) => this.props.refreshFunc && this.props.refreshFunc())
+        req.done((...args) => {
+            alert("Item created!");
+            this.props.refreshFunc && this.props.refreshFunc()
+        })
         req.fail((...arsg) => console.log("FAIL", ...args))
     }
 
@@ -32,6 +35,7 @@ export default class WishListComponent extends BaseComponent {
             if (res === "Campaign for this item already exists.") {
                 alert("This item already has a campaign");
             } else {
+                alert("Campaing created!");
                 this.props.refreshHook && this.props.refreshHook()   
             }
         })

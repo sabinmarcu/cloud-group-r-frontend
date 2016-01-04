@@ -17,7 +17,7 @@ export default class CampaignView {
     static render() {
         const c = this.props.campaign, i = this.props.item, pper = c.amountCollected / (i && i.price || 1) * 100;
         return <Card style={this.props.style} className={this.styles.container}>
-            <header className={this.styles.header}>{i && i.name || c.name}</header>
+            <header className={this.styles.header}>{c.name} ({i && i.name})</header>
             <h4>Started for {this.views.user(c.targetUser)} by {this.views.user(c.initiator)}</h4>
             {i && i.description && <span className={this.styles.description}>{i.description}</span>}
 
