@@ -2,6 +2,7 @@ import BaseComponent from "../../baseComponent";
 import $ from "jquery";
 import { actions } from "../../../helpers/util";
 import { connect } from "react-redux";
+import { autobind } from "core-decorators";
 
 @connect(state => true && {})
 export default class CampaignComponent extends BaseComponent {
@@ -27,6 +28,16 @@ export default class CampaignComponent extends BaseComponent {
 
     loadUserProfile(id) {
         this.props.dispatch(actions.main.changeActiveView("userprofile", {id}));
+    }
+
+    @autobind
+    sendPaymentData(e) {
+        $.ajax({
+            url: `${this.__website__url}campaigns/?id=${this.props.campaign.id}`,
+            method: "PUT",
+            data: this.refs.amount.value,
+        })
+        e.preventDefault()
     }
 
     state = {

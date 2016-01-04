@@ -4,7 +4,7 @@ import WishList from "./wishlist";
 
 export default class UserProfileViews {
     static get content() {
-        return this.props.user.subview === "wishlist" && <WishList list={this.state.wishlist} isMe={this.isMe} refreshFunc={this.refresh} /> || this.isMe && <CampaignList from={this.props.id} /> || <CampaignList for={this.state.user.id} />
+        return this.props.user.subview === "wishlist" && <WishList list={this.state.wishlist} isMe={this.isMe} refreshFunc={this.refresh} user={this.props.user} /> || this.isMe && <CampaignList from={this.props.id} /> || <CampaignList isMe={this.isMe} for={this.state.user.id} />
     }
     static render() {
         return this.state.user && <div className={this.styles.container}>

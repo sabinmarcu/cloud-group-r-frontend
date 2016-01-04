@@ -27,8 +27,22 @@ export default class WishListViews {
                 </Card>}
                 {Object.keys(this.props.list).map(item => 
                     <Card className={this.styles.container}>
-                        <header className={this.styles.header}>{this.props.list[item].name} (Price: {this.props.list[item].price})</header>
+                        <header className={this.styles.header}>
+                            {this.props.list[item].name} (Price: {this.props.list[item].price})
+                        </header>
                         {this.props.list[item] && this.props.list[item].description && <span className={this.styles.description}>{this.props.list[item].description}</span>}
+                        {!this.props.isMe && <span>
+                            <h4> Start Campaign </h4>
+                            <label for="campaignName" className={this.styles.inputGroup}>
+                                Name
+                                <input type="text" id="campaignName" ref={"name-" + item}/>
+                            </label>
+                            <label for="endDate" className={this.styles.inputGroup}>
+                                End Date
+                                <input type="date" id="endDate" ref={"endDate-" + item}/>
+                            </label>
+                            <button className={this.styles.submitButton} onClick={() => this.newCampaign(item)}>Submit</button>
+                        </span>}
                     </Card>
                 )}
             </section>

@@ -12,9 +12,23 @@ export default class WishListComponent extends BaseComponent {
             url: `${this.__website__url}items/`, 
             type: "POST",
             crossDomain: true,
-            data: Object.keys(this.refs).reduce((prev, it) => (prev[it] = this.refs[it].value) && prev || prev, {}),
+            data: ["name", "eventName", "description", "price"].reduce((prev, it) => (prev[it] = this.refs[it].value) && prev || prev, {}),
         });
-        req.done((...args) => console.log("SUCCESS", ...args))
+        req.done((...args) => this.props.refreshFunc && this.props.refreshFunc())
+        req.fail((...arsg) => console.log("FAIL", ...args))
+    }
+
+    @autobind
+    newCampaign(id) {
+        let obj = ["name-" + id, "endDate-" + id].reduce((prev, it) => (prev[it.replace("-" + id, "")] = this.refs[it].value) && prev || prev, {});
+        obj.itemId = id;
+        let req = $.ajax({
+            url: `${this.__website__url}campaigns/`, 
+            type: "POST",
+            crossDomain: true,
+            data: obj,
+        });
+        req.done((...args) => this.props.refreshHook && this.props.refreshHook())
         req.fail((...arsg) => console.log("FAIL", ...args))
     }
  }

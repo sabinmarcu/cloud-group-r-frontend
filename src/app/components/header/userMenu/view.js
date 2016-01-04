@@ -6,8 +6,8 @@ export default class UserMenuViews {
             <li>
                 <span className={"mdi mdi-settings"}></span>
                 <ul>
-                    <li onClick={this.props.changeViewTrigger && () => this.props.changeViewTrigger("campaigns")} >DEBUG: campaigns</li>
-                    <li onClick={this.props.changeViewTrigger && () => this.props.changeViewTrigger("users")} >DEBUG: users</li>
+                    <li onClick={this.props.changeViewTrigger && () => this.props.changeViewTrigger("campaigns")} >Campaigns</li>
+                    <li onClick={this.props.changeViewTrigger && () => this.props.changeViewTrigger("users")} >Friends</li>
                     <li onClick={this.logout}>Logout</li>
                 </ul>
             </li>
